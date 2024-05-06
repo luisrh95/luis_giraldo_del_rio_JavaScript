@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lista de mercado - Por Luis Hernán Giraldo del Río</title>
+<style>
+	html,body {
+		width: 100%;
+		height: 100%;
+		margin: 0px;
+		padding: 0px;
+		overflow: hidden;
+		position: relative;
+		vertical-align: top;
+		background-color: #82976e;
+		font-family: Arial, sans-serif;
+	}
+	.container{
+		max-width: 650px;
+		white-space: 100%;
+		height: 100%;
+		display: grid;
+		margin: 0px auto;
+		grid-template-columns: 1fr;
+    	grid-template-rows: auto 1fr;
+	}
+	button.add_item{
+		background-color: #fbf2d1;
+		border-radius: 2px;
+		display: table;
+		margin: 20px auto;
+		color: #536146;
+		font-weight: bold;
+		font-size: medium;	
+		border: none;
+		padding: 10px 15px;
+	}
+	button.add_item:hover{
+		background-color: #f9f3d7;
+	}
+	.container .container-body{
+		padding: 30px 35px;
+		box-sizing: border-box;
+	}
+	.HojaCompras{
+		width: 100%;
+		height: 100%;
+		display: grid;
+		grid-template-columns: 1fr;
+    	grid-template-rows: auto 1fr;
+		background-color: #fffbee;
+		margin: 0px;
+		position: relative;
+		vertical-align: top;
+		padding: 10px;
+		box-sizing: border-box;
+		box-shadow: 4px 5px 6px 0px #31362c8f;
+	}
+	.HojaCompras h1{
+		width: 100%;
+		display: block;
+		color: #536146;
+		text-align: center;
+		font-size: large;
+	}
+	.HojaCompras ul{
+		list-style-type: none;
+		padding: 0px;
+		margin: 0px;
+		overflow: auto;
+		overflow-y: auto;
+	}
+	.HojaCompras li{
+	width: 100%;
+    height: auto;
+    display: grid;
+    padding: 5px;
+	color: #536146;
+    margin-bottom: 5px;
+	box-sizing: border-box;
+	grid-template-rows: 1fr;
+	text-transform: capitalize;
+	grid-template-columns: 1fr auto;
+    border-bottom: 2px dashed #dce8ac;
+	}
+	.HojaCompras li button{
+		border: none;
+		background-color: transparent;
+		color: #536146;
+		font-weight: bold;
+		font-style: italic;
+		cursor: pointer;
+	}
+</style>
+</head>
+<body>
+
+<div class="container">
+	
+ <div class="container-header">
+	 
+	
+	<button class="add_item" onclick="agregarItem()">
+		Agregar Item a la lista de Mercado
+	</button>	 
+	 
+ </div>	
+	
+ <div class="container-body">
+	 
+   <div class="HojaCompras">
+	   <h1>Lista de compras del mes</h1>
+	   <ul id="lista-mercado">
+	     <!-- Imprimir elementos del mercado -->
+	   </ul>
+   </div>
+			
+ </div>	
+	
+	
+</div>	
+	
+
+<script>
+  // Array para almacenar los elementos de la lista del mercado
+  let listaCompras = [];
+
+  // Función para agregar un item a la lista
+  function agregarItem() {
+    let item = prompt("Ingrese el nombre del artículo:");
+    if (item) { // Comprueba si se ingresó un valor
+      listaCompras.push(item);
+      actualizarLista();
+    }
+  }
+
+  // Función para eliminar un item de la lista del mercado
+  function eliminarItem(elemento,item) {
+    
+	//preguntamos si esta seguro de borrar el item del mercado
+	if(confirm('¿Deseas borrar '+item+' del mercado?') == true){
+		listaCompras.splice(elemento, 1);
+		actualizarLista();
+	}else{
+		alert('Atención - '+item+' no se borro del mercado')
+	}
+    
+  }
+
+  // Función para actualizar la lista del mercado #lista-mercado
+  function actualizarLista() {
+    let lista = document.getElementById("lista-mercado");
+    // Borra los elementos de la lista para evitar duplicados
+    lista.innerHTML = "";
+    // Recorre el array y agrega cada elemento como un <li> a la lista
+    listaCompras.forEach((item, elemento) => {
+      let li = document.createElement("li");
+      li.textContent = item;
+      // Agrega un botón para eliminar el elemento
+      let botonBorrar = document.createElement("button");
+      botonBorrar.textContent = "X";
+      botonBorrar.onclick = function() {
+        eliminarItem(elemento,item);
+      };
+      li.appendChild(botonBorrar);
+      lista.appendChild(li);
+    });
+  }
+</script>
+
+</body>
+</html>
