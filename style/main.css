@@ -1,0 +1,103 @@
+@charset "utf-8";
+html,body {
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	overflow: hidden;
+	position: relative;
+	vertical-align: top;
+	background-color: #82976e;
+	font-family: Arial, sans-serif;
+}
+.container{
+	max-width: 650px;
+	white-space: 100%;
+	height: 100%;
+	display: grid;
+	margin: 0px auto;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto 1fr;
+}
+button.add_item{
+	background-color: #fbf2d1;
+	border-radius: 2px;
+	display: table;
+	margin: 20px auto;
+	color: #536146;
+	font-weight: bold;
+	font-size: medium;	
+	border: none;
+	padding: 10px 15px;
+	cursor: pointer;
+}
+button.add_item:hover{
+	background-color: #f9f3d7;
+}
+.container .container-body{
+	padding: 30px 35px;
+	box-sizing: border-box;
+}
+.HojaCompras{
+	width: 100%;
+	height: 100%;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto 1fr;
+	background-color: #fffbee;
+	margin: 0px;
+	position: relative;
+	vertical-align: top;
+	padding: 10px;
+	box-sizing: border-box;
+	box-shadow: 4px 5px 6px 0px #31362c8f;
+}
+.HojaCompras h1{
+	width: 100%;
+	display: block;
+	color: #536146;
+	text-align: center;
+	font-size: large;
+}
+.HojaCompras ul{
+	list-style-type: none;
+	padding: 0px;
+	margin: 0px;
+	overflow: auto;
+	overflow-y: auto;
+}
+.HojaCompras li{
+	width: 100%;
+	height: auto;
+	display: grid;
+	padding: 5px;
+	color: #536146;
+	border-radius: 3px;
+	margin-bottom: 5px;
+	transition: all 0.5s;
+	box-sizing: border-box;
+	grid-template-rows: 1fr;
+	text-transform: capitalize;
+	grid-template-columns: 1fr auto auto;
+	border-bottom: 2px dashed #dce8ac;
+}
+.HojaCompras li p{
+	margin: 0px;
+}
+.HojaCompras li p span{
+	font-style: italic;
+	text-decoration: underline;
+}
+.HojaCompras li:hover{
+	transition: all 0.5s;
+	background-color: #d9e1d1;
+}
+.HojaCompras li button{
+	border: none;
+	background-color: transparent;
+	color: #536146;
+	font-weight: bold;
+	font-style: italic;
+	cursor: pointer;
+}
+
