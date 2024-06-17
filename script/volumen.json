@@ -1,0 +1,38 @@
+[
+    {
+      "id": 0,
+      "volumen": "",
+      "descripcion": "Seleccionar",
+      "image": ""
+    },
+    {
+      "id": 1,
+      "volumen": "Kg",
+      "descripcion": "Kilogramo",
+      "image": "icono_kg"
+    },
+    {
+      "id": 2,
+      "volumen": "Lb",
+      "descripcion": "Libra",
+      "image": "icono_lb"
+    },
+    {
+      "id": 3,
+      "volumen": "Oz",
+      "descripcion": "Onza",
+      "image": "icono_oz"
+    },
+    {
+      "id": 4,
+      "volumen": "G",
+      "descripcion": "Gramo",
+      "image": "icono_g"
+    },
+    {
+      "id": 5,
+      "volumen": "Mg",
+      "descripcion": "Miligramo",
+      "image": "icono_mg"
+    }
+ ]
