@@ -15,10 +15,29 @@
 	
  <div class="container-header">
 	 
-	
-	<button class="add_item" onclick="agregarItem()">
-		Agregar Item a la lista de Mercado
-	</button>	 
+   <div id="container-form" class="modal-form-item">
+		
+	   <h2>¡Agrega un item a tu lista!</h2>
+	   
+	   <form id="addItem" method="post">
+	   		
+		  <div>
+		   
+			  <input type="text" name="producto" placeholder="Nombre del Item"/>
+			  
+			  <input type="number" name="cantidad" placeholder="Cantidad que necesitas"/>
+			  
+			  <select class="ListVolumen" name="volumen">
+				  <option value="">Volumen</option>
+			  </select>
+			  
+		  </div>
+		   
+		  <button class="add_item" type="submit" >Agregar</button>
+	   </form>
+	   	   
+   </div>
+	 
 	 
  </div>	
 	
@@ -29,6 +48,7 @@
 	   <ul id="lista-mercado">
 	     <!-- Imprimir elementos del mercado -->
 	   </ul>
+
    </div>
 			
  </div>	
@@ -36,8 +56,11 @@
 	
 </div>	
 	
-<script type="text/javascript" src="script/main.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="script/main.js"></script>
+    <script>
+        iniciar()
+    </script>
 
 </body>
 </html>
